@@ -389,9 +389,16 @@ class Rate(models.Model):
 		r = Region.get_region_from_country(country)
 		if r is None:
 			raise ValueError, u"Bad country value '%s': could not determine region" % country
-		w = Rate.objects.filter(weight__gte=Decimal(str(weight)), region=r)[0].weight
-		rs = Rate.objects.filter(weight=w, region=r).order_by(u'price')
-		return rs
+
+		# A very dirty way to retrieve the cheapest rate for each Recommanded.
+		# I think it's not possible to make this in one request using mysql (maybe with postgre).
+		rates_ids = []
+		for recommanded in Recommanded.objects.all():
+			rs = Rate.objects.filter(weight__gte=Decimal(str(weight)), region=r, recommanded=recommanded).order_by("price")[:1]
+			if rs.exists():
+				rates_ids.append(rs[0].id)
+
+		return Rate.objects.filter(id__in=rates_ids).order_by(u'price')
 
 	def __repr__(self):
 		return u"<Rate: max %.2fkg@%s, %.2f EUR>" % (self.weight, self.recommanded, self.price)
