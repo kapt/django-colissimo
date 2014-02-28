@@ -350,7 +350,7 @@ class Recommanded(models.Model):
 	"""
 	Recommanded
 	"""
-	level = models.CharField(max_length=3, unique=True)
+	level = models.CharField(max_length=4, unique=True)
 	price = models.DecimalField(max_digits=5, decimal_places=2)
 
 	def __str__(self):
@@ -402,7 +402,4 @@ class Rate(models.Model):
 
 	def __repr__(self):
 		return u"<Rate: max %.2fkg@%s, %.2f EUR>" % (self.weight, self.recommanded, self.price)
-
-	class Meta:
-		unique_together = ((u'weight', 'region', 'recommanded'))
 
