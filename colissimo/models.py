@@ -264,19 +264,19 @@ class Region(models.Model):
 	OM2 = (u'New Caledonia', u'French Polynesia', u'Wallis and Futuna Islands',
 		   u'French Southern Territories')
 	# International Zone A
-	IZA = (u'Switzerland', u'Norway', u'Austria', u'Belgium', u'Bulgaria', u'Cyprus',
+	IZA = (u'Switzerland', u'Austria', u'Belgium', u'Bulgaria', u'Croatia', u'Cyprus',
 		   u'Czech Republic', u'Denmark', u'Estonia', u'Finland', u'Germany',
 		   u'Greece', u'Hungary', u'Italy', u'Latvia', u'Lithuania', u'Luxembourg',
 		   u'Malta', u'Netherlands', u'Poland', u'Portugal', u'Ireland', u'Romania',
 		   u'Slovakia', u'Slovenia', u'Spain', u'Sweden',
 		   u'United Kingdom of Great Britain and Northern Ireland', u'Gibraltar',
-		   u'Guernsey', u'Jersey', u'Liechtenstein', u'Norway', u'San Marino')
+		   u'Guernsey', u'Jersey', u'Liechtenstein', u'San Marino')
 	# International Zone B
-	IZB = (u'Morocco', u'Algeria', u'Tunisia', u'Libyan Arab Jamahiriya',
-		   u'Mauritania', u'Western Sahara', u'Albania', u'Armenia', u'Azerbaijan',
-		   u'Ukraine', u'Belarus', u'Bosnia and Herzegovina', u'Croatia', u'Georgia',
+	IZB = (u'Norway', u'Morocco', u'Algeria', u'Tunisia',
+		    u'Western Sahara', u'Albania', u'Armenia', u'Azerbaijan',
+		   u'Ukraine', u'Belarus', u'Bosnia and Herzegovina', u'Georgia',
 		   u'Iceland', u'The former Yugoslav Republic of Macedonia',
-		   u'Republic of Moldova', u'Russian Federation', u'Serbia', u'Turkey')
+		   u'Republic of Moldova', u'Serbia', u'Turkey')
 	# International Zone C
 	IZC = (u'Afghanistan', u'Angola', u'Argentina', u'Zimbabwe', u'Zambia', u'Yemen',
 		   u'Uganda', u'Bahrain', u'Chad', u'Benin', u'Botswana', u'Burkina Faso',
@@ -285,15 +285,13 @@ class Region(models.Model):
 		   u'Democratic Republic of the Congo', u'Djibouti', u'Egypt',
 		   u'Equatorial Guinea', u'Ethiopia', u'Gabon', u'Gambia', u'Ghana',
 		   u'Guinea', u'Iran, Islamic Republic of', u'Iraq', u'Israel', u'Jordan',
-		   u'Kenya', u'Kuwait', u'Lebanon', u'Lesotho', u'Liberia', u"Côte d'Ivoire",
+		   u'Kenya', u'Kuwait', u'Lebanon', u'Lesotho', u'Liberia', u'Libyan Arab Jamahiriya', u"Côte d'Ivoire",
 		   u'Madagascar', u'Mali', u'Marshall Islands', u'Mozambique', u'Namibia',
 		   u'Niger', u'Nigeria', u'Oman', u'Pakistan', u'Qatar', u'Rwanda',
 		   u'Saudi Arabia', u'Senegal', u'South Africa', u'Sudan', u'Swaziland',
 		   u'Syrian Arab Republic', u'United Republic of Tanzani', u'Timor-Leste',
 		   u'Togo', u'United Arab Emirates', u'United States of America', u'United Republic of Tanzania',
-		    )
-	# International Zone D
-	IZD = (u'American Samoa', u'Anguilla', u'Antarctica', u'Antigua and Barbuda',
+		   u'American Samoa', u'Anguilla', u'Antarctica', u'Antigua and Barbuda',
 		   u'Aruba', u'Australia', u'Bahamas', u'United States Virgin Islands',
 		   u'British Virgin Islands', u'Viet Nam',
 		   u'Venezuela (Bolivarian Republic of)', u'Vanuatu', u'Uzbekistan',
@@ -312,12 +310,12 @@ class Region(models.Model):
 		   u'Kyrgyzstan', u"Democratic People's Republic of Korea",
 		   u"Lao People's Democratic Republic",
 		   u'Macao Special Administrative Region of China', u'Malawi', u'Malaysia',
-		   u'Maldives', u'Mauritius', u'Mexico', u'Micronesia, Federated States of',
+		   u'Maldives', u'Mauritius', u'Mauritania', u'Mexico', u'Micronesia, Federated States of',
 		   u'Mongolia', u'Montenegro', u'Montserrat', u'Myanmar', u'Nauru', u'Nepal',
 		   u'Netherlands Antilles', u'New Zealand', u'Nicaragua', u'Niue',
 		   u'Norfolk Island', u'Northern Mariana Islands', u'Palau',
 		   u'Occupied Palestinian Territory', u'Panama', u'Papua New Guinea',
-		   u'Paraguay', u'Peru', u'Philippines', u'Pitcairn', u'Puerto Rico',
+		   u'Paraguay', u'Peru', u'Philippines', u'Pitcairn', u'Puerto Rico', u'Russian Federation',
 		   u'Saint Helena', u'Saint Kitts and Nevis', u'Saint Lucia',
 		   u'Saint Vincent and the Grenadines', u'Samoa', u'Sao Tome and Principe',
 		   u'Seychelles', u'Sierra Leone', u'Singapore', u'Solomon Islands',
@@ -328,7 +326,7 @@ class Region(models.Model):
 		   u'Turks and Caicos Islands', u'United States Minor Outlying Islands',
 		   u'Åland Islands')
 
-	_lookup = (u'France', u'OM1', u'OM2', u'Zone A', u'Zone B', u'Zone C', u'Zone D')
+	_lookup = (u'France', u'OM1', u'OM2', u'Zone A', u'Zone B', u'Zone C',)
 
 	@staticmethod
 	def get_region_from_country(country):
@@ -336,7 +334,7 @@ class Region(models.Model):
 			raise TypeError, u"Country must be a string, not %s" % type(country)
 		cty = country.strip().lower()
 		# France
-		zones = (Region.FMA, Region.OM1, Region.OM2, Region.IZA, Region.IZB, Region.IZC, Region.IZD)
+		zones = (Region.FMA, Region.OM1, Region.OM2, Region.IZA, Region.IZB, Region.IZC,)
 		for k in range(len(zones)):
 			for z in zones[k]:
 				if cty == z.strip().lower():
