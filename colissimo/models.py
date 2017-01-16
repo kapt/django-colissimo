@@ -349,7 +349,7 @@ class Recommanded(models.Model):
 	Recommanded
 	"""
 	level = models.CharField(max_length=4, unique=True)
-	price = models.DecimalField(max_digits=5, decimal_places=2)
+	price = models.DecimalField(max_digits=6, decimal_places=2)
 
 	def __str__(self):
 		return self.level
