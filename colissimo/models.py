@@ -269,21 +269,20 @@ class Region(models.Model):
 		   u'Greece', u'Hungary', u'Italy', u'Latvia', u'Lithuania', u'Luxembourg',
 		   u'Malta', u'Netherlands', u'Poland', u'Portugal', u'Ireland', u'Romania',
 		   u'Slovakia', u'Slovenia', u'Spain', u'Sweden',
-		   u'United Kingdom of Great Britain and Northern Ireland', u'Gibraltar',
-		   u'Guernsey', u'Jersey', u'Liechtenstein', u'San Marino')
+		   u'United Kingdom of Great Britain and Northern Ireland', u'Liechtenstein', u'San Marino', u'Holy See')
 	# International Zone B
 	IZB = (u'Norway', u'Morocco', u'Algeria', u'Tunisia',
-		    u'Western Sahara', u'Albania', u'Armenia', u'Azerbaijan',
+		   u'Albania', u'Armenia', u'Azerbaijan',
 		   u'Ukraine', u'Belarus', u'Bosnia and Herzegovina', u'Georgia',
 		   u'Iceland', u'The former Yugoslav Republic of Macedonia',
-		   u'Republic of Moldova', u'Serbia', u'Turkey')
+		   u'Republic of Moldova', u'Serbia', u'Turkey', u'Montenegro',)
 	# International Zone C
 	IZC = (u'Afghanistan', u'Angola', u'Argentina', u'Zimbabwe', u'Zambia', u'Yemen',
 		   u'Uganda', u'Bahrain', u'Chad', u'Benin', u'Botswana', u'Burkina Faso',
 		   u'Burundi', u'Cameroon', u'Canada', u'Cape Verde',
 		   u'Central African Republic', u'Comoros', u'Congo',
 		   u'Democratic Republic of the Congo', u'Djibouti', u'Egypt',
-		   u'Equatorial Guinea', u'Ethiopia', u'Gabon', u'Gambia', u'Ghana',
+		   u'Equatorial Guinea', u'Ethiopia', u'Gabon', u'Gambia', u'Ghana', u'Gibraltar',
 		   u'Guinea', u'Iran, Islamic Republic of', u'Iraq', u'Israel', u'Jordan',
 		   u'Kenya', u'Kuwait', u'Lebanon', u'Lesotho', u'Liberia', u'Libyan Arab Jamahiriya', u"Côte d'Ivoire",
 		   u'Madagascar', u'Mali', u'Marshall Islands', u'Mozambique', u'Namibia',
@@ -303,7 +302,7 @@ class Region(models.Model):
 		   u'Dominican Republic', u'Ecuador', u'El Salvador', u'Eritrea',
 		   u'Falkland Islands (Malvinas)', u'Faeroe Islands', u'Fiji', u'Guyana',
 		   u'Greenland', u'Grenada', u'Guam', u'Guatemala', u'Guinea-Bissau',
-		   u'Haiti', u'Heard Island and Mcdonald Islands', u'Holy See', u'Honduras',
+		   u'Haiti', u'Heard Island and Mcdonald Islands', u'Honduras',
 		   u'Hong Kong Special Administrative Region of China', u'India',
 		   u'Indonesia', u'Isle of Man', u'Jamaica', u'Japan', u'Kazakhstan',
 		   u'Kiribati', u'French Southern Territories', u'Republic of Korea',
@@ -311,7 +310,7 @@ class Region(models.Model):
 		   u"Lao People's Democratic Republic",
 		   u'Macao Special Administrative Region of China', u'Malawi', u'Malaysia',
 		   u'Maldives', u'Mauritius', u'Mauritania', u'Mexico', u'Micronesia, Federated States of',
-		   u'Mongolia', u'Montenegro', u'Montserrat', u'Myanmar', u'Nauru', u'Nepal',
+		   u'Mongolia', u'Montserrat', u'Myanmar', u'Nauru', u'Nepal',
 		   u'Netherlands Antilles', u'New Zealand', u'Nicaragua', u'Niue',
 		   u'Norfolk Island', u'Northern Mariana Islands', u'Palau',
 		   u'Occupied Palestinian Territory', u'Panama', u'Papua New Guinea',
@@ -324,7 +323,7 @@ class Region(models.Model):
 		   u'Taiwan, Province of China', u'Tajikistan', u'Thailand', u'Tokelau',
 		   u'Tonga', u'Trinidad and Tobago', u'Turkmenistan',
 		   u'Turks and Caicos Islands', u'United States Minor Outlying Islands',
-		   u'Åland Islands')
+		   u'Åland Islands', u'Guernsey', u'Jersey', u'Western Sahara',)
 
 	_lookup = (u'France', u'OM1', u'OM2', u'Zone A', u'Zone B', u'Zone C',)
 
